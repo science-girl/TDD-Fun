@@ -3,14 +3,14 @@ const compression = require("../lib/compression.js");
 describe("String Compression", () => {
   test("when no arguments are given", () => {
     const result = compression();
-    expect(result).toEqual("requires a string");
+    expect(result).toEqual(undefined);
   });
 });
 
 describe("String Compression", () => {
   test("when a non-string is given", () => {
     const result = compression();
-    expect(result).toEqual("requires a string");
+    expect(result).toEqual(undefined);
   });
 });
 
@@ -18,6 +18,13 @@ describe("String Compression", () => {
   test("when string is composed of unique characters", () => {
     const result = compression("abcd");
     expect(result).toEqual("a1b1c1d1");
+  });
+});
+
+describe("String Compression", () => {
+  test("when string is composed of unique characters", () => {
+    const result = compression("frof");
+    expect(result).toEqual("f1r1o1f1");
   });
 });
 
